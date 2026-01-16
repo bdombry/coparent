@@ -1,0 +1,441 @@
+/* Admin CSS styles */
+
+.admin-content {
+  padding: 40px 80px 80px;
+  margin-left: 48px;
+  margin-right: 48px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.admin-selector {
+  margin-bottom: 40px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.admin-selector label {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.admin-selector select {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  min-width: 300px;
+  font-family: "Zalando Sans", Arial, sans-serif;
+  transition: border-color 0.3s;
+}
+
+.admin-selector select:hover {
+  border-color: var(--violet);
+}
+
+.admin-selector select:focus {
+  outline: none;
+  border-color: var(--violet);
+  box-shadow: 0 0 0 3px rgba(77, 20, 148, 0.1);
+}
+
+.admin-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.admin-panel.hidden {
+  display: none;
+}
+
+.admin-panel-header {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--beige-bg);
+}
+
+.admin-panel-header h2 {
+  font-size: 28px;
+  margin-bottom: 5px;
+  color: var(--violet);
+}
+
+.admin-panel-header p {
+  color: #666;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* CALENDAR */
+.admin-calendar-section {
+  margin-bottom: 40px;
+}
+
+.admin-calendar-section h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f7f7f1;
+  border-radius: 10px;
+}
+
+.btn-month-nav {
+  background-color: var(--violet);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.btn-month-nav:hover {
+  background-color: #6a1fa8;
+  transform: scale(1.05);
+}
+
+.calendar-header h4 {
+  font-size: 18px;
+  color: var(--violet);
+  margin: 0;
+  min-width: 150px;
+  text-align: center;
+}
+
+.admin-calendar {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+}
+
+.calendar-days-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: var(--violet);
+  color: white;
+  font-weight: bold;
+}
+
+.day-name {
+  padding: 12px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.admin-calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+  background-color: #ddd;
+  padding: 1px;
+}
+
+.admin-calendar-day {
+  background-color: white;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  transition: all 0.3s;
+  color: #333;
+  font-size: 14px;
+}
+
+.admin-calendar-day:hover:not(.disabled):not(.other-month) {
+  background-color: #f0f0f0;
+  transform: scale(1.05);
+}
+
+.admin-calendar-day.other-month {
+  color: #ccc;
+  background-color: #fafafa;
+  cursor: default;
+}
+
+.admin-calendar-day.disabled {
+  background-color: #f5f5f5;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.admin-calendar-day.selected {
+  background-color: var(--vert);
+  color: #000;
+  font-weight: bold;
+}
+
+.admin-calendar-day.today {
+  border: 2px solid #f59e0b;
+  font-weight: bold;
+}
+
+/* HORAIRES SECTION */
+.admin-horaires-section {
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.admin-horaires-section h3 {
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  color: #333;
+}
+
+.selected-day-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.selected-day-info h3 {
+  margin: 0;
+  color: var(--violet);
+  font-size: 16px;
+}
+
+.btn-change-day {
+  background-color: #999;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.btn-change-day:hover {
+  background-color: #777;
+}
+
+.horaires-container {
+  margin-bottom: 20px;
+}
+
+.horaires-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  min-height: 45px;
+  padding: 12px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.horaire-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #f0f0f0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  color: #333;
+}
+
+.horaire-item:hover {
+  background-color: #e8e8e8;
+  border-color: #aaa;
+}
+
+.horaire-remove {
+  background: none;
+  border: none;
+  color: var(--rouge);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s;
+}
+
+.horaire-remove:hover {
+  transform: scale(1.2);
+}
+
+.horaire-input-group {
+  display: flex;
+  gap: 10px;
+}
+
+.horaire-input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: "Zalando Sans", Arial, sans-serif;
+  transition: border-color 0.3s;
+}
+
+.horaire-input:focus {
+  outline: none;
+  border-color: var(--vert);
+  box-shadow: 0 0 0 3px rgba(104, 226, 189, 0.1);
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "Zalando Sans", Arial, sans-serif;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-add {
+  background-color: var(--vert);
+  color: #000;
+  white-space: nowrap;
+}
+
+.btn-add:hover {
+  background-color: #4fd4a4;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(104, 226, 189, 0.3);
+}
+
+.btn-save {
+  background-color: var(--violet);
+  color: white;
+  min-width: 200px;
+}
+
+.btn-save:hover {
+  background-color: #6a1fa8;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(77, 20, 148, 0.3);
+}
+
+.btn-reset {
+  background-color: #999;
+  color: white;
+  min-width: 200px;
+}
+
+.btn-reset:hover {
+  background-color: #777;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.admin-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.status-message {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  display: none;
+  font-size: 14px;
+}
+
+.status-message.success {
+  display: block;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.status-message.error {
+  display: block;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.no-selection {
+  text-align: center;
+  padding: 60px 40px;
+  background-color: white;
+  border-radius: 12px;
+  color: #999;
+  font-size: 18px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+  .admin-content {
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .admin-selector {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-selector select {
+    min-width: 100%;
+  }
+
+  .admin-panel {
+    padding: 20px;
+  }
+
+  .horaire-input-group {
+    flex-direction: column;
+  }
+
+  .btn-add {
+    width: 100%;
+  }
+
+  .admin-actions {
+    flex-direction: column;
+  }
+
+  .btn-save,
+  .btn-reset {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .selected-day-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}

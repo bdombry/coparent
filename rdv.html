@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prise de Rendez-vous - Le parcours des parents</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="rdv.css" />
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="index.html" class="nav-link">ACCUEIL</a>
+      </div>
+      <div class="nav-right">
+        <a href="rdv.html" class="nav-link nav-rdv">RDV</a>
+        <a href="admin.html" class="nav-link nav-admin">ADMIN</a>
+        <a href="#" class="nav-link nav-urgence">EN CAS D'URGENCE</a>
+        <a href="#" class="nav-link nav-contact">CONTACT</a>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="header">
+      <h1>Prise de Rendez-vous</h1>
+      <p>Choisissez votre praticien et prenez un rendez-vous</p>
+    </header>
+
+    <!-- CONTENU -->
+    <section class="rdv-content">
+      <!-- ÉTAPE 1: CHOIX SPÉCIALITÉ -->
+      <div class="rdv-step" id="step-speciality">
+        <div class="rdv-block rdv-block-no-style">
+          <div class="rdv-options">
+            <div class="rdv-option" data-speciality="psychologue">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop"
+                alt="Psychologue"
+              />
+              <div class="rdv-option-label">Psychologue</div>
+            </div>
+            <div class="rdv-option" data-speciality="gyneco">
+              <img
+                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop"
+                alt="Gynécologue"
+              />
+              <div class="rdv-option-label">Gynécologue</div>
+            </div>
+            <div class="rdv-option" data-speciality="pediatre">
+              <img
+                src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&h=400&fit=crop"
+                alt="Pédiatre"
+              />
+              <div class="rdv-option-label">Pédiatre</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 2: CHOIX MÉDECIN -->
+      <div class="rdv-step" id="step-doctor">
+        <div class="rdv-block">
+          <h2>Étape 2 : <span id="speciality-name"></span></h2>
+          <p>Sélectionnez un médecin</p>
+          <div class="rdv-doctors" id="doctors-list"></div>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 3: CHOIX TYPE RDV -->
+      <div class="rdv-step" id="step-rdv-type">
+        <div class="rdv-block">
+          <h2>Rendez-vous avec <span id="doctor-name-1"></span></h2>
+          <p>Quel type de rendez-vous souhaitez-vous ?</p>
+          <div class="rdv-options-small">
+            <div class="rdv-option-small" data-rdv-type="couple">
+              Rendez-vous en couple
+            </div>
+            <div class="rdv-option-small" data-rdv-type="seul">
+              Rendez-vous femme enceinte seule
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 4: CHOIX NATURE RDV -->
+      <div class="rdv-step" id="step-rdv-nature">
+        <div class="rdv-block">
+          <h2>Rendez-vous avec <span id="doctor-name-2"></span></h2>
+          <p>Quel type de rendez-vous ?</p>
+          <div class="rdv-options-small">
+            <div class="rdv-option-small" data-rdv-nature="premiere">
+              Premier rendez-vous
+            </div>
+            <div class="rdv-option-small" data-rdv-nature="suivi">
+              Rendez-vous de suivi
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 5: CHOIX DATE -->
+      <div class="rdv-step" id="step-date">
+        <div class="rdv-block">
+          <h2>Rendez-vous avec <span id="doctor-name-3"></span></h2>
+          <p>Choisissez une date</p>
+          <input type="date" id="rdv-date" class="rdv-input" />
+        </div>
+      </div>
+
+      <!-- ÉTAPE 6: CHOIX HEURE -->
+      <div class="rdv-step" id="step-time">
+        <div class="rdv-block">
+          <h2>Rendez-vous avec <span id="doctor-name-4"></span></h2>
+          <p>Choisissez une heure</p>
+          <div class="rdv-times" id="times-list"></div>
+        </div>
+      </div>
+
+      <!-- ÉTAPE 7: CONFIRMATION -->
+      <div class="rdv-step" id="step-confirmation">
+        <div class="rdv-block rdv-success">
+          <h2>Rendez-vous confirmé !</h2>
+          <div id="confirmation-details"></div>
+          <button class="rdv-btn-reset">Prendre un autre rendez-vous</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="rdv.js"></script>
+  </body>
+</html>

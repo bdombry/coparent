@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion des Horaires - Le parcours des parents</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="admin.css" />
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <nav class="nav">
+      <div class="nav-left">
+        <a href="index.html" class="nav-link">ACCUEIL</a>
+      </div>
+      <div class="nav-right">
+        <a href="rdv.html" class="nav-link nav-rdv">RDV</a>
+        <a href="admin.html" class="nav-link nav-admin">ADMIN</a>
+        <a href="#" class="nav-link nav-urgence">EN CAS D'URGENCE</a>
+        <a href="#" class="nav-link nav-contact">CONTACT</a>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="header">
+      <h1>Gestion des Horaires</h1>
+      <p>Modifiez vos horaires de consultation</p>
+    </header>
+
+    <!-- CONTENU -->
+    <section class="admin-content">
+      <!-- Sélection du médecin -->
+      <div class="admin-selector">
+        <label for="doctor-select">Sélectionnez votre profil :</label>
+        <select id="doctor-select">
+          <option value="">-- Choisir un médecin --</option>
+        </select>
+      </div>
+
+      <!-- Panneau de modification -->
+      <div id="admin-panel" class="admin-panel hidden">
+        <div class="admin-panel-header">
+          <h2 id="doctor-display-name"></h2>
+          <p id="doctor-speciality"></p>
+        </div>
+
+        <!-- Calendrier pour sélectionner le jour -->
+        <div class="admin-calendar-section">
+          <h3>Sélectionnez un jour pour gérer les horaires</h3>
+          
+          <div class="calendar-header">
+            <button class="btn-month-nav" id="admin-prev-month">◀</button>
+            <h4 id="admin-current-month"></h4>
+            <button class="btn-month-nav" id="admin-next-month">▶</button>
+          </div>
+
+          <div class="admin-calendar">
+            <div class="calendar-days-header">
+              <div class="day-name">Lun</div>
+              <div class="day-name">Mar</div>
+              <div class="day-name">Mer</div>
+              <div class="day-name">Jeu</div>
+              <div class="day-name">Ven</div>
+              <div class="day-name">Sam</div>
+              <div class="day-name">Dim</div>
+            </div>
+            <div class="admin-calendar-days" id="admin-calendar-days"></div>
+          </div>
+        </div>
+
+        <!-- Horaires pour le jour sélectionné -->
+        <div class="admin-horaires-section" id="admin-horaires-section" style="display: none;">
+          <div class="selected-day-info">
+            <h3>Horaires du <span id="selected-day-display"></span></h3>
+            <button class="btn-change-day" id="back-to-calendar-btn">← Changer le jour</button>
+          </div>
+
+          <div class="horaires-container">
+            <div id="day-horaires-list" class="horaires-list"></div>
+            
+            <div class="horaire-input-group">
+              <input 
+                type="text" 
+                id="new-day-horaire" 
+                placeholder="Ex: 09:00 ou 09:00 - 10:00 Couple"
+                class="horaire-input"
+              />
+              <button id="add-day-horaire-btn" class="btn btn-add">+ Ajouter</button>
+            </div>
+          </div>
+
+          <div class="admin-actions">
+            <button id="save-day-horaires-btn" class="btn btn-save">💾 Enregistrer les horaires</button>
+            <button id="reset-day-horaires-btn" class="btn btn-reset">↻ Réinitialiser ce jour</button>
+          </div>
+
+          <div id="day-status-message" class="status-message"></div>
+        </div>
+
+        <!-- RDV pris -->
+        <div class="admin-rdvs-section">
+          <h3>📅 Rendez-vous pris</h3>
+          <div id="rdvs-list" class="rdvs-list"></div>
+        </div>
+      </div>
+
+      <!-- Message si pas de médecin sélectionné -->
+      <div id="no-selection" class="no-selection">
+        <p>Veuillez sélectionner votre profil pour gérer vos horaires</p>
+      </div>
+    </section>
+
+    <script src="admin-new.js"></script>
+  </body>
+</html>
